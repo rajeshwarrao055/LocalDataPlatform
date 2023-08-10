@@ -44,11 +44,22 @@ def copy_within_minio():
     except S3Error as e:
         print(f"Error copying file: {e}")
 
-copy_task = PythonOperator(
+
+def hello_world():
+    print("YAY!!!!")
+
+
+"""copy_task = PythonOperator(
     task_id='copy_task',
     python_callable=copy_within_minio,
     dag=dag,
+)"""
+
+hello_world_task = PythonOperator(
+    task_id='hello_world_task',
+    python_callable=hello_world,
+    dag=dag
 )
 
 # Define the execution order
-copy_task
+hello_world_task
