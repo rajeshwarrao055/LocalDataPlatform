@@ -22,7 +22,9 @@ MINIO_ROOT_USER=admin MINIO_ROOT_PASSWORD=password minio server /Users/rajeshwar
 
 * Airflow Installation 
   * pip install apache-airflow
+  * pip install apache-airflow-providers-amazon (Needed in dag)
   * airflow db init 
   * airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com
   * airflow webserver --port 8080 
   * airflow scheduler
+  * Change `dags_folder` in airflow.cfg to relevant folder with dags
